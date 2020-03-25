@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度注册</title>
+    <script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <a href="http://www.baidu.com"><img src="https://passport.baidu.com/static/passpc-account/img/baidu.png" alt=""></a>
+    <div class="boxa">
+        <div>
+            <a href="http://www.baidu.com"><img src="https://www.baidu.com/img/bd_logo1.png" alt=""></a>
+            <span style="color: black; font-size: 18px;">| 欢迎注册</span>
+        </div>
+        <form action="">
+            <p>
+                用户名 <input type="text" id="username" placeholder="请设置用户名"  onfocus="YHMonfocu()"  onblur="YHMonblus()" />
+                <span id="YHMerror">
+                </span>
+            </p>
+            
+            <p>
+                手机号 <input type="text" id="phone" placeholder="可用于登录和找回密码" onfocus="LXDHonfocu()" onblur="LXDHonblus()"/>
+                <span id="LXDHerror">
+                </span>
+            </p>
+            <p>
+                密&emsp;码 <input type="password" id="pwd" placeholder="请设置登录密码"  onfocus="MMonfocu()" onblur="MMonblus()"/>
+                <span id="MMerror">
+                </span>
+            </p>
+            <p>验证码
+                <input type="text" id="yzm" placeholder="请输入验证码" class="box2" onfocus="YZonfocu()" onblur="YZonblus()"/>
+                <input type="button" id="btn" value="获取验证码" class="box wrap" style="width: 145px; height: 44px;" />
+                <span id="YYerror">
+                </span>
+            </p>
+
+
+            <p>&emsp;&emsp;
+                <input type="submit" value="注册">
+            </p>
+            <p class="box1">&emsp;&emsp;&emsp;
+                <input type="checkbox">阅读并接受<a href="">《百度用户协议》</a>及<a href="">《百度隐私保护声明》</a>
+            </p>
+        </form>
+    </div>
+
+</body>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js">
+</script>
+<script src="./index.js"></script>
+
+</html>

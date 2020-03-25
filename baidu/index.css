@@ -1,0 +1,54 @@
+body{
+    background: url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=336492172,12372647&fm=26&gp=0.jpg)  center 0;
+    
+}
+.boxa{
+    width:420px;
+    height:600px;
+    margin:auto;
+    background-color: rgb(255, 253, 253);
+    margin-right: 90px;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+div img{
+    width: 135px;
+    vertical-align: -11px;
+    margin-left: 5px;
+}
+form input{
+    width: 350px;
+    height: 40px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.box2{
+    width: 198px;
+}
+
+.wrap{
+    height: 40px;
+    border-radius: 5px;
+}
+input[type=checkbox]{
+    width: 15px;
+    height: 15px;
+    vertical-align: -2px;
+}
+.box1 a{
+    font-size: 10px;
+}
+input[type=submit]{
+    background: dodgerblue;
+    border-radius: 20px;
+}
+a{
+    /*去下划线*/
+    text-decoration: none;
+}
+span{
+    font-size: 15px;
+    color:red;
+    height:10px;
+}

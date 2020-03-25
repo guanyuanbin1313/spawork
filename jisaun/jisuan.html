@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>作业07-5</title>
+	<meta charset="utf-8" />
+	<style>
+		#box{
+			width:350px;
+			height:305px;
+			border: 1px solid #1587e8;
+		}
+		#mima{
+			width:305px;
+			height:45px;
+			border: 1px solid #aca7a2;
+			font-size:16px;
+			color:#aca7a2;
+			padding-left: 10px;
+			margin-left:20px;
+			margin-top:25px;
+		}
+		#denglu{
+			width:305px;
+			height:45px;
+			background-color:#1587e8;
+			border-radius:2px; 
+			text-align:center;
+			margin-left:20px;
+			color:#ffffff;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p>
+			<span style="font-size:20px;font-family:微软雅黑;color:#1587e8;padding-left:25px">Web开发二</span>
+			<span style="padding-left:25px;font-size:18px;">用户名密码登录</span>
+		</p>
+		<input type = "text" name = "myName"  placeholder="用户名" id="mima" onfocus="oneOne()" onblur="oneTwo()"/> 
+		<div id="asDmp" style="padding-left:25px;"></div>
+		<input type = "password" name = "pass" placeholder="密码" id="mima"  onfocus="oneThree()" onblur="oneFour()"/>
+		<div id="qwErt" style="padding-left:25px;"></div>
+		<input type = "checkbox" style="margin-left:25px;margin-top:25px;"/> 下次自动登录
+		<input type="submit" value="登录" id="denglu" name="sub" />
+	</div>
+	
+	<script type="text/javascript">
+		var asDmp=document. getElementById("asDmp");
+		var qwErt=document. getElementById("qwErt");
+		function oneOne(){
+			if(asDmp==null){
+			asDmp.innerHTML="请输入6-12位用户名";
+			}
+		}
+		
+		function oneThree(){
+			qwErt.innerHTML="密码必须为数字，字母组合";
+		}
+		function oneFour(){
+			qwErt.innerHTML="";
+		}
+	</script>
+</body>
+</html>
