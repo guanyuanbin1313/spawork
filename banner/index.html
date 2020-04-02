@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	
+	<div id="box" class="box"></div>
+		<script type="text/javascript" src="./index.js"></script>
+		<script type="text/javascript">
+			
+			//设置你所需要的参数
+			var options = {};
+			options.oDiv=document.getElementById("box");
+			var imgs = ["./img/b1.png","./img/b2.png","./img/b3.png","./img/b4.png","./img/b5.png"]; //传入所需图片的地址
+			options.imgs = imgs;
+			options.hrefs=["1","2","3","4","5"]; //点击图片跳转地址
+			options.ulName = "slider";//轮播图ul的样式类名字
+			options.liName = "slide";//轮播图li的样式类名字
+			options.navName = "nav";//小圆点的样式类名字
+			options.navActive = "active";//选中圆点时的样式 对应当前图片的圆点的样式
+			options.btnName1 = "left";  //后翻页按钮类名字
+			options.btnName2 = "right"; //后翻页按钮类名字
+			options.time= 3000;//传入轮播时间间隔
+			var slider = new Slider(options);
+			
+		</script>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="./index.js"></script>
+
+</html>

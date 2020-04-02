@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+    
+        div {
+            width: 800px;
+            height: 300px;
+            border: solid 2px red;
+            margin: 10% auto;
+            position: relative;
+        }
+    
+        ul li {
+            display: none;
+        }
+    
+        ul li img {
+            width: 800px;
+            height: 300px;  
+        }
+    
+        ol {
+            position: absolute;
+            bottom: 20px;
+        }
+    
+        ol li {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: blue;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            float: left;
+            margin: 0px 25px;
+        }
+    
+        span {
+            position: absolute;
+            width: 60px;
+            height: 50px;
+            background: darksalmon;
+            color: aliceblue;
+            line-height: 50px;
+            text-align: center;
+            top: 50%;
+            margin-top: -40px;
+            font-size: 40px;
+        }
+    
+        #left {
+            left: 10px;
+        }
+    
+        #right {
+            right: 10px;
+        }
+    
+        ul .love {
+            display: block;
+        }
+    
+        ol .love {
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="love"><img src="./b2.png" alt=""></li>
+            <li><img src="./b1.png" alt=""></li>
+            <li><img src="./b2.png" alt=""></li>
+            <li><img src="./b3.png" alt=""></li>
+            <li><img src="./b5.png" alt=""></li>
+            <li><img src="./b1.png" alt=""></li>
+            <li><img src="./b1.png" alt=""></li>
+            <li><img src="./b1.png" alt=""></li>
+            <li><img src="./b1.png" alt=""></li>
+            <li><img src="./b1.png" alt=""></li>
+        </ul>
+        <ol>
+            <li class="love">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ol>
+        <span id="left">
+            &lt;
+        </span>
+        <span id="right">
+            &gt;
+        </span>
+    </div>
+    <script>
+        var div = document.querySelector('div')  //获取大盒子
+ 
+        var ul_li = document.querySelectorAll('ul li') //获取ul下的所有li
+        console.log(ul_li);
+        var ol_li = document.querySelectorAll('ol li') //获取ol下的所有li
+        console.log(ol_li);
+        var left = document.querySelector('#left')    //获取左边的箭头
+        
+        var right = document.querySelector('#right')  //获取右边的箭头
+        l;
+        console.log();
+        //函数封装点击右边
+        function auto() {
+            index++
+            if (index >= ul_li.length) {
+                index = 0
+            }
+            getLed(index)
+        }
+        //点击右边
+        right.onclick = function () {
+            auto()
+        }
+        //点击左边
+        left.onclick = function () {
+            index--
+            if (index < 0) {
+                index = ul_li.length - 1
+            }
+            getLed(index)
+        }
+        function getLed(ind) {
+            for (var j = 0; j < ul_li.length; j++) {
+                ul_li[j].classList.remove('love')
+                ol_li[j].classList.remove('love')
+            }
+            ul_li[index].classList.add('love')
+            ol_li[index].classList.add('love')
+        }
+        
+        //定时器自动播放
+        timer = setInterval(auto, 1000) //每隔1秒执行一次
+        
+        //鼠标划入停止定时器
+        div.onmousemove = function () {
+            clearInterval(timer)
+            timer = null
+        }
+        //鼠标划出执行定时器
+        div.onmouseout = function () {
+            timer = setInterval(auto, 1000)
+        }
+        //点击图片导航 切换图片
+        for (var i = 0; i < ol_li.length; i++) {
+            (function (ind) {
+                ol_li[ind].onclick = function () {
+                    getLed(index = ind)
+                }
+            })(i)
+        }
+        </script>
+</body>
+</html>
